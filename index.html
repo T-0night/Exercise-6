@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise-6</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            transition: background-color 0.2s; /* Smooth transition for background color */
+        }
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Move your mouse to change the background color from green to yellow</p>
+    </div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            // var x = e.clientX;
+            var y = e.clientY;
+            // var width = window.innerWidth;
+            var height = window.innerHeight;
+
+            // Map the mouse position to a range of 0-255 for RGB values
+            var red = Math.round((y / height) * 130 + 100);
+            
+            // var blue = Math.round((y / height) * 255);
+
+            // Set the background color
+            document.body.style.backgroundColor = `rgb(${red}, 220, 110)`;
+            // r: 100-230, diff: 130
+        });
+    </script>
+</body>
+</html>
+
